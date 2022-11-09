@@ -36,7 +36,7 @@ var camera = new THREE.PerspectiveCamera(
 //   1,
 //   100,
 // )
-camera.position.set(20, 20, 20)
+camera.position.set(30, 30, 30)
 
 // init the renderer and the scene
 
