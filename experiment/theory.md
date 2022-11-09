@@ -10,7 +10,7 @@ These elements are called unit cells and fulfil the following requirements:
 For a given crystal there are always quite a few possible unit cells:
 
 <p align="center">
-  <img src="./images/unit-cell.svg" alt="unit cell"/>
+  <img src="./images/unit-cells.svg" alt="unit cell"/>
 </p>
 
 ### Primitive and non-primitive unit cell
