@@ -1,1 +1,1 @@
-### Aim of the experiment
+### Given a lattice, form primitive and non primitive cells.
