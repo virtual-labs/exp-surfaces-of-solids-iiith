@@ -149,7 +149,7 @@ selectRegion.addEventListener('click', function () {
 // respond to select a bunch of atoms
 const addSelectList = document.getElementById('SelectAtom')
 addSelectList.addEventListener('click', function () {
-  console.log('Selecting atom mode')
+  //   console.log('Selecting atom mode')
   if (action != 'selectAtom') {
     action = 'selectAtom'
   } else {
@@ -160,14 +160,14 @@ addSelectList.addEventListener('click', function () {
 let latticeID = 0
 let currentAtomList = createLattice(latticeID)
 for (let i = 0; i < currentAtomList.length; i++) {
-  console.log(currentAtomList[i])
+  //   console.log(currentAtomList[i])
   scene.add(currentAtomList[i])
   atomList.push(currentAtomList[i])
 }
 // respond to prev/next lattice buttons
 const PrevButton = document.getElementById('prev-btn')
 PrevButton.addEventListener('click', function () {
-  console.log('Prev Button clicked')
+  //   console.log('Prev Button clicked')
   latticeID = changeCurrentLatticePrev()
   for (let i = 0; i < currentAtomList.length; i++) {
     scene.remove(currentAtomList[i])
@@ -178,7 +178,7 @@ PrevButton.addEventListener('click', function () {
   currentAtomList = createLattice(latticeID)
 
   for (let i = 0; i < currentAtomList.length; i++) {
-    console.log(currentAtomList[i])
+    // console.log(currentAtomList[i])
     scene.add(currentAtomList[i])
     atomList.push(currentAtomList[i])
   }
@@ -188,7 +188,7 @@ PrevButton.addEventListener('click', function () {
 })
 const NextButton = document.getElementById('next-btn')
 NextButton.addEventListener('click', function () {
-  console.log('Next Button clicked')
+  //   console.log('Next Button clicked')
   latticeID = changeCurrentLatticeNext()
   for (let i = 0; i < currentAtomList.length; i++) {
     scene.remove(currentAtomList[i])
@@ -198,7 +198,7 @@ NextButton.addEventListener('click', function () {
   SelectAtomList = []
   action = ''
   for (let i = 0; i < currentAtomList.length; i++) {
-    console.log(currentAtomList[i])
+    // console.log(currentAtomList[i])
     scene.add(currentAtomList[i])
     atomList.push(currentAtomList[i])
   }
@@ -210,7 +210,7 @@ NextButton.addEventListener('click', function () {
 // respond to check selected lattice
 const CheckLattice = document.getElementById('CheckLattice')
 CheckLattice.addEventListener('click', function () {
-  console.log('Check Lattice Clicked')
+  //   console.log('Check Lattice Clicked')
   let out = latticeChecker(latticeID, SelectAtomList)
   let lbl = document.getElementById('lattice-result')
 

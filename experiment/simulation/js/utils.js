@@ -289,7 +289,7 @@ const LatticeList = [
 let LatticeIndex = 0
 
 export function changeCurrentLatticeNext() {
-  console.log('clicked')
+  //   console.log('clicked')
   let lbl = document.getElementById('current-lattice')
 
   LatticeIndex += 1
@@ -300,7 +300,7 @@ export function changeCurrentLatticeNext() {
   return LatticeIndex
 }
 export function changeCurrentLatticePrev() {
-  console.log('clicked')
+  //   console.log('clicked')
   let lbl = document.getElementById('current-lattice')
 
   LatticeIndex -= 1
@@ -446,7 +446,7 @@ export function distancesum(l) {
       sum += d
     }
   }
-  console.log(sum, l)
+  //   console.log(sum, l)
   return sum
 }
 export function latticeChecker(latticeID, SelectAtomList) {
