@@ -453,35 +453,35 @@ export function latticeChecker(latticeID, SelectAtomList) {
   if (latticeID == 0) {
     if (SelectAtomList.length != 4) return 0
     else {
-      if (Math.abs(distancesum(SelectAtomList) - 27.3) < 0.1) return 1
+      if (Math.abs(distancesum(SelectAtomList) - 27.3) < 1) return 1
       else return 0
     }
   }
   if (latticeID == 1) {
     if (SelectAtomList.length != 8) return 0
     else {
-      if (Math.abs(distancesum(SelectAtomList) - 143.59) < 0.1) return 1
+      if (Math.abs(distancesum(SelectAtomList) - 143.59) < 1) return 1
       else return 0
     }
   }
   if (latticeID == 2) {
     if (SelectAtomList.length != 14) return 0
     else {
-      if (Math.abs(distancesum(SelectAtomList) - 562.49) < 0.1) return 1
+      if (Math.abs(distancesum(SelectAtomList) - 562.49) < 1) return 1
       else return 0
     }
   }
   if (latticeID == 3) {
     if (SelectAtomList.length != 9) return 0
     else {
-      if (Math.abs(distancesum(SelectAtomList) - 342.61) < 0.1) return 1
+      if (Math.abs(distancesum(SelectAtomList) - 342.61) < 1) return 1
       else return 0
     }
   }
   if (latticeID == 4) {
     if (SelectAtomList.length != 17) return 0
     else {
-      if (Math.abs(distancesum(SelectAtomList) - 673.35) < 0.1) return 1
+      if (Math.abs(distancesum(SelectAtomList) - 889.19) < 1) return 1
       else return 0
     }
   }
