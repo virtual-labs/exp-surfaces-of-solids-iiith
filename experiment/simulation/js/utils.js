@@ -315,7 +315,7 @@ export function createLattice(latticeID) {
   let atomlist = []
   if (latticeID == 0) {
     console.log('square')
-    let latticedims = [10, 10, 10]
+    let latticedims = [20, 20, 20]
     for (let x = 0; x < latticedims[0]; x += 2) {
       for (let y = 0; y < latticedims[1]; y += 2) {
         let pos = new THREE.Vector3(x, y, 0)
@@ -325,7 +325,7 @@ export function createLattice(latticeID) {
     }
   } else if (latticeID == 1) {
     console.log('simple cubic')
-    let latticedims = [10, 10, 10]
+    let latticedims = [20, 20, 20]
     for (let x = 0; x < latticedims[0]; x += 2) {
       for (let y = 0; y < latticedims[1]; y += 2) {
         for (let z = 0; z < latticedims[2]; z += 2) {
@@ -337,7 +337,7 @@ export function createLattice(latticeID) {
     }
   } else if (latticeID == 2) {
     console.log('adding face centered cubic')
-    let latticedims = [10, 10, 10]
+    let latticedims = [20, 20, 20]
     for (let x = 0; x < latticedims[0]; x += 3) {
       for (let y = 0; y < latticedims[1]; y += 3) {
         for (let z = 0; z < latticedims[2]; z += 3) {
@@ -376,7 +376,7 @@ export function createLattice(latticeID) {
     }
   } else if (latticeID == 3) {
     console.log('adding body centered cubic')
-    let latticedims = [10, 10, 10]
+    let latticedims = [20, 20, 20]
     for (let x = 0; x < latticedims[0]; x += 4) {
       for (let y = 0; y < latticedims[1]; y += 4) {
         for (let z = 0; z < latticedims[2]; z += 4) {
@@ -397,7 +397,7 @@ export function createLattice(latticeID) {
     }
   } else if (latticeID == 4) {
     console.log('adding HCP')
-    let latticedims = [10, 10, 10]
+    let latticedims = [20, 20, 20]
     let height = 0
     for (let z = 0; z < latticedims[2]; z += 1.732) {
       if (height % 2 == 0) {
