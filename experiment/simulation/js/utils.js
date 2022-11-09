@@ -446,7 +446,7 @@ export function distancesum(l) {
       sum += d
     }
   }
-  //   console.log(sum, l)
+  console.log(sum, l)
   return sum
 }
 export function latticeChecker(latticeID, SelectAtomList) {
@@ -479,7 +479,7 @@ export function latticeChecker(latticeID, SelectAtomList) {
     }
   }
   if (latticeID == 4) {
-    if (SelectAtomList.length != 15) return 0
+    if (SelectAtomList.length != 17) return 0
     else {
       if (Math.abs(distancesum(SelectAtomList) - 673.35) < 0.1) return 1
       else return 0
