@@ -2,38 +2,88 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "How many dimensions does an unit cell of a n dimensional lattice have?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "0",
+        "b": "n",
+        "c": "n/2",
+        "d": "None of the above"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "c": "It is necessary that the unit cell has the same number of dimensions as the lattice"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+    {
+      "question": "Which of these are non primitive unit cells?",
+      "answers": {
+        "a": "Body centered cubic unit cell",
+        "b": "Face centered cubic unit cell",
+        "c": "Both (a) and (b)",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "c": "The above two unit cells have more than one atom in them and hence are non primitive unit cells."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+        {
+      "question": "How many atoms are a part of a BCC unit cell disregarding the contribution factor from atoms?",
+      "answers": {
+        "a": "8",
+        "b": "2",
+        "c": "9",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "c": "Disregarding contributions, BCC has 8 atoms at vertices and one inside its body at the center."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+        {
+      "question": "How many atoms are a part of a FCC unit cell disregarding the contribution factor from atoms?",
+      "answers": {
+        "a": "14",
+        "b": "8",
+        "c": "4",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "a": "Disregarding contributions, FCC has 8 atoms at vertices and 6 atoms at faces of the cube."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+        {
+      "question": "Considering contributions of atoms to other unit cells, what are the number of atoms in a FCC unit cell?",
+      "answers": {
+        "a": "9",
+        "b": "4",
+        "c": "14",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "b": "The 8 vertice atoms contribute as one atom and the 6 face atoms contribute as 3 atoms to the unit cell, totalling to 4 atoms in the unit cell"
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+        {
+      "question": "Considering contributions of atoms to other unit cells, what are the number of atoms in a HCP unit cell?",
+      "answers": {
+        "a": "9",
+        "b": "4",
+        "c": "17",
+        "d": "6"
+      },
+      "explanations": {
+        "d": "The 12 vertice atoms contribute as 2 atoms, the 2 face centered atoms contribute as 1 and the 3 internal atoms contribute as 3 atoms. This totals to 6 atoms inside the HCP unit cell."
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
     }
   ]
 }
