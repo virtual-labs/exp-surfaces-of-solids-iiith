@@ -1,7 +1,6 @@
 ### Procedure
 
-This experiment is about finding the primitive cells or non primitive cells for a given lattice. In theory, a lattice is infinite, but here we have a finite lattice.
-
+This experiment is about finding the primitive cells or non primitive unit cells for a given lattice. In theory, a lattice is infinite, but here we have a finite lattice for the experiment.
 
 The experiment contains 5 lattices which are :
 * Square Planar
@@ -10,16 +9,16 @@ The experiment contains 5 lattices which are :
 * Body Centered Cubic
 * Hexagonal Packing
  
-The first lattice is a planar lattice, meaning it extends in only two dimensions. 
+The first lattice is a planar lattice, meaning it extends in only two dimensions. The remaining lattices extend in three dimensions and are a mixture of primitive and non-primitive unit cell lattices.
 
 ### Finding primitive Cells
-Primtive cells can be constructed with ease for simple lattices, usually atoms forming a shape or a polyhedron easily identified. 
+Primtive cells can be constructed with ease for simple lattices, usually atoms forming a shape or a polyhedron can be easily identified and then chosen as a part of the unit cell. Usually there are only so many atoms from one reference atom that display different surroundings from the reference. All these atoms can be put together as a part of the unit cell. 
 
 The steps to the experiment are given below
 - The interface will contain a canvas in which the different finite lattices in question are shown.
-- The interface contains buttons to move to next/previous lattice, a button to select atoms (which is a toggle switch) and a button to check the choice made.
+- The interface contains a dropdown to switch between lattices, a button to select atoms (which is a toggle switch), a button to select the 3D (or 2D) region covered by the selected atoms and a button to check the choice made.
 - For a given lattice the user is required to use the `select atoms` interface to select the atoms which constitute primitive cell (if exists) or non primitive cell for that lattice and click `check` button.
-- Upon checking user will be greeted with a responce of either `Correct` or `incorrect` depending on the accuracy of the lattice selected.
+- Upon checking user will be prompted with a response of either `correct` or `incorrect` depending on the accuracy of the unit cell selected.
 - Repeat the above two steps for all the 5 lattices presented.
 
 #### Note
