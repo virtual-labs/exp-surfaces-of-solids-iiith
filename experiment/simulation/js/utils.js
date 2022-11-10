@@ -9,11 +9,15 @@ var radius_scale = 1 / 100
 var atomDetails = {
   X: {
     radius: 60,
-    color: '#3298dc',
+    color: '#5D3FD3',
   },
   Y: {
     radius: 100,
-    color: '#3298dc',
+    color: '#5D3FD3',
+  },
+  Z: {
+    radius: 100,
+    color: '#5D3FD3',
   },
   Zn: {
     radius: 135,
@@ -97,7 +101,7 @@ export function CheckHover(mouse, camera, atomList, INTERSECTED) {
   var raycaster = new THREE.Raycaster()
   raycaster.setFromCamera(mouse, camera)
   const intersects = raycaster.intersectObjects(atomList, false)
-  var pink = 0xff44ff
+  var pink = 0xffffff
   var blue = 0x00ffff
   var black = 0x000000
   if (intersects.length > 0) {
@@ -214,7 +218,7 @@ function containsObject(obj, list) {
 export function highlightSelectList(SelectAtomList, atomList) {
   for (let j = 0; j < atomList.length; j++) {
     var atom = atomList[j]
-    var pink = 0xff44ff
+    var pink = 0xffffff
     var blue = 0x00ffff
     var black = 0x000000
     if (containsObject(atom, SelectAtomList)) {
@@ -318,7 +322,7 @@ export function createLattice(latticeID) {
     let latticedims = [20, 20, 20]
     for (let x = 0; x < latticedims[0]; x += 2) {
       for (let y = 0; y < latticedims[1]; y += 2) {
-        let pos = new THREE.Vector3(x, y, 0)
+        let pos = new THREE.Vector3(x, 0, y)
         let atom = addSphereAtCoordinate(pos, 'Y')
         atomlist.push(atom)
       }
