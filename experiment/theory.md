@@ -1,13 +1,13 @@
-## Unit Cells
+## What are unit cells?
 
-An ideal crystal is an infinite object which thus cannot be illustrated as a whole in a single image. Even if one could, this would not be desirable. Instead one can use the fact that a crystal is built up by smallest elements that are repeated in all directions, filling the whole space.
+An ideal crystal is an infinite object. Thus, it cannot be illustrated as a whole in a single image. Even if it was possible, it isn't desirable. Instead we can use the fact that a crystal is built up by smaller elements that are repeated in all directions, filling the whole space.
 
 These elements are called unit cells and fulfil the following requirements:
 
 - A repetitive arrangement (pure translation) of them can build up the whole crystal without overlaps/gaps.
 - There is no further partition of the unit cell that could itself be used as a unit cell.
 
-For a given crystal there are always quite a few possible unit cells:
+For a given crystal, there are always quite a few possible unit cells as we can see in the below example:
 
 <p align="center">
   <img src="./images/unit-cells.svg" alt="unit cell"/>
@@ -15,21 +15,21 @@ For a given crystal there are always quite a few possible unit cells:
 
 ### Primitive and non-primitive unit cell
 
-There are two types of unit cells: primitive and non- primitive. A unit cell that contains only one lattice point is called a primitive unit cell, which is made up from the lattice points at each of the corners.It is the smallest possible cell. If there is a lattice point at the edge of a cell and thus shared with another cell, it is only counted half. Accordingly, a point located on the corner of a cube is shared by 8 cubes and would count with 1/8.
+There are two types of unit cells: primitive and non-primitive unit cell. An unit cell that contains only one lattice point in it is called a primitive unit cell and usually these kind of unit cells have an atom in each vertice of the cell. The concept of only one lattice point being contained in a primitive unit cell comes from a simple calculation. An atom in a vertice of a cell can be shared among other unit cells and in the case of a cube, it is 8 cells sharing one atom. This equates to the unit cell having 1/8 of an atom in one vertice. Since it has 8 vertices, the number of atoms comes out to be 1. A primitive unit cell is the smallest possible unit cell.
 
-In case of non-primitive unit cells, there are additional lattice points, either on a face of the unit cell or with in the unit cell.
+In the case of non-primitive unit cells, there are additional lattice points, either on a face of the unit cell or within the unit cell iself, resulting in more than one lattice point per unit cell.
 
 <p align="center">
   <img src="./images/prim.jpg" alt="primitve/nonprimitive cell"/>
 </p>
-There are seven primitive crystal systems; cubic, tetragonal, orthorhombic, hexagonal, monoclinic, triclinic and rhombohedral. They differ in the arrangement of their crystallographic axes and angles. Corresponding to the above seven, Bravis defined 14 possible crystal systems as shown in the figure.
+There are seven primitive crystal systems: cubic, tetragonal, orthorhombic, hexagonal, monoclinic, triclinic and rhombohedral. They differ in the arrangement of their crystallographic axes and angles as we can see in the figure below. Corresponding to the above seven arrangement of atoms, Bravais defined 14 possible crystal systems which are now known as the standard Bravais lattices.
 <p align="center">
   <img src="./images/brave.jpg" alt="bravis lattice"/>
 </p>
 
 ### Wigner-Seitz Cell
 
-There is a special type of primitive-cells known as Wigner-Seitz cell. The Wigner-Seitz cell of a lattice point is defined as the volume that encloses all points in space which are closer to this particular lattice point than to any other. It can be constructed as depicted below
+There is a special type of primitive-cell known as Wigner-Seitz cell. The Wigner-Seitz cell of a lattice point is defined as the volume that encloses all points in space which are closer to the selected lattice point than to any other lattice point. It can be constructed as depicted below
 
 <p align="center">
   <img src="./images/wigner.svg" alt="wigner-seitz example"/>
