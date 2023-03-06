@@ -48,7 +48,7 @@ var orthographic_camera = new THREE.OrthographicCamera(
   1,
   1000,
 )
-var camera = orthographic_camera
+var camera = perspective_camera
 
 // init the orbit controls
 var controls = new OrbitControls(camera, renderer.domElement)
@@ -84,7 +84,7 @@ Checked.addEventListener('click', function () {
   controls.autoRotateSpeed = 0
   controls.enablePan = false
   controls.enableDamping = true
-  camera.position.set(25, 25, 25)
+  camera.position.set(50, 50, 50)
 })
 
 // to check the current object which keyboard points to
@@ -123,10 +123,23 @@ document.addEventListener('mousemove', function (event) {
   mouse = getMouseCoords(event)
 })
 
+//delete atom
 document.addEventListener('keydown', function (event) {
   var keyCode = event.key
   if (keyCode == 'd') {
-    DeleteObject(mouse, camera, scene, atomList, INTERSECTED)
+    // DeleteObject(mouse, camera, scene, atomList, SelectAtomList, INTERSECTED)
+    INTERSECTED = CheckHover(mouse, camera, atomList)
+    if (INTERSECTED) {
+      var index = atomList.indexOf(INTERSECTED)
+      if (index > -1) {
+        atomList.splice(index, 1)
+      }
+      var index = SelectAtomList.indexOf(INTERSECTED)
+      if (index > -1) {
+        SelectAtomList.splice(index, 1)
+      }
+      scene.remove(INTERSECTED)
+    }
   }
 })
 
@@ -165,6 +178,9 @@ currentLatticeElement.addEventListener('click', function () {
   // console.log('lattice change to', currentLattice)
   for (let i = 0; i < currentAtomList.length; i++) {
     scene.remove(currentAtomList[i])
+  }
+  for (let i = 0; i < atomList.length; i++) {
+    scene.remove(atomList[i])
   }
   for (let i = 0; i < HullList.length; i++) {
     scene.remove(HullList[i])
