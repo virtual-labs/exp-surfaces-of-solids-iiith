@@ -28,13 +28,13 @@ aside {
 .v-canvas-container {
   width: 100%;
   height: 100%;
-  min-height: 900px;
-  border: none;
+  min-height: 800px;
   padding: 0px;
+  border-color: #48c774;
+  border-radius: 1%;
   /* position: fixed; */
   position: static;
 }
-
 .v-slider-full {
   width: 80%;
   margin: auto;

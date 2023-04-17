@@ -123,26 +123,6 @@ document.addEventListener('mousemove', function (event) {
   mouse = getMouseCoords(event)
 })
 
-//delete atom
-document.addEventListener('keydown', function (event) {
-  var keyCode = event.key
-  if (keyCode == 'd') {
-    // DeleteObject(mouse, camera, scene, atomList, SelectAtomList, INTERSECTED)
-    INTERSECTED = CheckHover(mouse, camera, atomList)
-    if (INTERSECTED) {
-      var index = atomList.indexOf(INTERSECTED)
-      if (index > -1) {
-        atomList.splice(index, 1)
-      }
-      var index = SelectAtomList.indexOf(INTERSECTED)
-      if (index > -1) {
-        SelectAtomList.splice(index, 1)
-      }
-      scene.remove(INTERSECTED)
-    }
-  }
-})
-
 let action = ''
 
 // create a list of atoms in scene
@@ -189,7 +169,6 @@ currentLatticeElement.addEventListener('click', function () {
   currentAtomList = createLattice(LatticeList.indexOf(currentLattice))
 
   for (let i = 0; i < currentAtomList.length; i++) {
-    // console.log(currentAtomList[i])
     scene.add(currentAtomList[i])
     atomList.push(currentAtomList[i])
   }
@@ -205,7 +184,9 @@ CheckLattice.addEventListener('click', function () {
   let lbl = document.getElementById('lattice-result')
 
   if (out) lbl.innerHTML = "<span style='color: green;'>Correct</span>"
-  else lbl.innerHTML = "<span style='color: red;'>InCorrect</span>"
+  else
+    lbl.innerHTML =
+      "<span style='color: red;'>InCorrect Combination of Atoms selected</span>"
 })
 
 // select region enclosed between the atoms
@@ -213,7 +194,10 @@ const selectRegion = document.getElementById('SelectRegion')
 
 selectRegion.addEventListener('click', function () {
   if (SelectAtomList.length < 4 || currentLattice == 'Square Planar') {
-    alert('Select Region Button expects atleast 4 points to be selected')
+    let lbl = document.getElementById('lattice-result')
+    lbl.innerHTML =
+      "<span style='color: red;'>Select Region Button expects atleast 4 non planar points to be selected</span>"
+
     return
   }
   for (let i = 0; i < HullList.length; i++) {
@@ -271,7 +255,17 @@ Slider.oninput = function () {
     newatomlist.push(atom)
   }
   atomList = newatomlist
-  SelectAtomList = []
+  var newSelectAtomList = []
+  for (let i = 0; i < SelectAtomList.length; i++) {
+    var pos1 = SelectAtomList[i].position
+    for (let j = 0; j < atomList.length; j++) {
+      var pos2 = atomList[j].position
+      if (JSON.stringify(pos1) === JSON.stringify(pos2)) {
+        newSelectAtomList.push(atomList[j])
+      }
+    }
+  }
+  SelectAtomList = newSelectAtomList
 }
 
 // make the window responsive
@@ -282,30 +276,23 @@ window.addEventListener('resize', () => {
 })
 
 document.addEventListener('mouseup', function (event) {
+  var pressType = event.button // 2 for right click, 0 for left clickl
   if (drag == false) {
     // if the action is add atom
-    if (action == 'addAtom') {
-      var newSphere = addSphere(mouse, atomtype, camera, scene)
-      scene.add(newSphere)
-      atomList.push(newSphere)
-    } else if (action == 'selectAtom') {
+    if (action == 'selectAtom') {
       INTERSECTED = CheckHover(mouse, camera, atomList, INTERSECTED)
       if (INTERSECTED) {
-        if (SelectAtomList.includes(INTERSECTED)) {
+        if (SelectAtomList.includes(INTERSECTED) && pressType == 2) {
           var indexofatom = SelectAtomList.indexOf(INTERSECTED)
           SelectAtomList.splice(indexofatom, 1)
-        } else {
+        } else if (!SelectAtomList.includes(INTERSECTED)) {
           SelectAtomList.push(INTERSECTED)
         }
-      }
-    } else if (action == 'selectAll') {
-      SelectAtomList = []
-      for (let i = 0; i < atomList.length; i++) {
-        SelectAtomList.push(atomList[i])
       }
     }
   }
 })
+
 //delete atom
 document.addEventListener('keydown', function (event) {
   var keyCode = event.key
