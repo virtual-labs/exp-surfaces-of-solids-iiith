@@ -26,11 +26,3 @@ There are seven primitive crystal systems: cubic, tetragonal, orthorhombic, hexa
 <p align="center">
   <img src="./images/brave.jpg" alt="bravis lattice"/>
 </p>
-
-### Wigner-Seitz Cell
-
-There is a special type of primitive-cell known as Wigner-Seitz cell. The Wigner-Seitz cell of a lattice point is defined as the volume that encloses all points in space which are closer to the selected lattice point than to any other lattice point. It can be constructed as depicted below
-
-<p align="center">
-  <img src="./images/wigner.svg" alt="wigner-seitz example"/>
-</p>
