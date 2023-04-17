@@ -16,9 +16,9 @@ Primtive cells can be constructed with ease for simple lattices, usually atoms f
 
 The steps to the experiment are given below
 - The interface will contain a canvas in which the different finite lattices in question are shown.
-- The interface contains a dropdown to switch between lattices, a button to select atoms (which is a toggle switch), a button to select the 3D (or 2D) region covered by the selected atoms and a button to check the choice made.
-- For a given lattice the user is required to use the `select atoms` interface to select the atoms which constitute primitive cell (if exists) or non primitive cell for that lattice and click `check` button.
-- Upon checking user will be prompted with a response of either `correct` or `incorrect` depending on the accuracy of the unit cell selected.
+- The interface contains a dropdown to switch between lattices, a button to select atoms (which is a toggle switch), a button to select the 3D (or 2D) region covered by the selected atoms, a button to clear your choices and a button to check the choice made.
+- For a given lattice the user is required to use the `select atoms` interface to select the atoms which constitute primitive cell (if exists) or non primitive cell for that lattice and click `check` button. When `select atoms` is toggled on, use left click to select and right click to de-select an atom.
+- Once selections are made in the above said order, the selections can be evaluated.
 - Repeat the above two steps for all the 5 lattices presented.
 
 #### Note
