@@ -251,6 +251,20 @@ export function checkSCP(SelectAtomList) {
   }
   return true
 }
+export function constructHull(SelectAtomList) {
+  let posarray = []
+  var pos = new THREE.Vector3()
+  for (let i = 0; i < SelectAtomList.length; i++) {
+    pos = SelectAtomList[i].position.clone()
+    posarray.push(pos)
+  }
+  var convexHull = new ConvexHull().setFromPoints(posarray)
+  for (let i = 0; i < convexHull.faces.length; i++) {
+    var normal = convexHull.faces[i].normal
+    console.log('norm', normal)
+  }
+  return convexHull
+}
 
 export function select_Region(SelectAtomList, atomList) {
   let posarray = []
@@ -448,36 +462,92 @@ export function distancesum(l) {
   console.log(sum, l)
   return sum
 }
-export function latticeChecker(latticeID, SelectAtomList) {
-  if (latticeID == 0) {
-    if (SelectAtomList.length != 4) return 0
-    else {
-      if (Math.abs(distancesum(SelectAtomList) - 27.3) < 1) return 1
-      else return 0
+export function pairwiseDistances(array) {
+  var all_dists = {}
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      var dist = Math.round(array[i].point.distanceTo(array[j].point) * 1000)
+      if (Object.keys(all_dists).includes(dist.toString())) {
+        all_dists[dist] = all_dists[dist] + 1
+      } else {
+        all_dists[dist] = 1
+      }
     }
+  }
+  console.log('all_dists', all_dists)
+  return Object.values(all_dists)
+}
+
+export function latticeChecker(latticeID, SelectAtomList, atomList) {
+  if (latticeID == 0) {
+    var hull = constructHull(SelectAtomList)
+    var counts = pairwiseDistances(hull.vertices)
+    console.log('counts', counts)
+    var square_counts = [4, 2]
+    var parallelogram_counts = [1, 2, 3]
+    if (
+      JSON.stringify(counts.sort()) === JSON.stringify(square_counts.sort())
+    ) {
+      return 1
+    } else if (
+      JSON.stringify(counts.sort()) ===
+      JSON.stringify(parallelogram_counts.sort())
+    ) {
+      return 1
+    }
+    return 0
   }
   if (latticeID == 1) {
-    if (SelectAtomList.length != 8) return 0
-    else {
-      if (Math.abs(distancesum(SelectAtomList) - 143.59) < 1) return 1
-      else return 0
+    var overall_norm = { x: 0, y: 0, z: 0 }
+    var hull = constructHull(SelectAtomList)
+    var counts = pairwiseDistances(hull.vertices)
+    for (let i = 0; i < hull.faces.length; i++) {
+      var norm = hull.faces[i].normal
+      overall_norm.x = overall_norm.x + norm.x
+      overall_norm.y = overall_norm.y + norm.y
+      overall_norm.z = overall_norm.z + norm.z
     }
+    console.log('overall_norm', overall_norm)
+    if (overall_norm.x == 0 && overall_norm.y == 0 && overall_norm.z == 0) {
+      return 1
+    }
+    return 0
   }
   if (latticeID == 2) {
-    if (SelectAtomList.length != 14) return 0
-    else {
-      if (Math.abs(distancesum(SelectAtomList) - 562.49) < 1) return 1
-      else return 0
+    var overall_norm = { x: 0, y: 0, z: 0 }
+    var hull = constructHull(SelectAtomList)
+    var counts = pairwiseDistances(hull.vertices)
+    for (let i = 0; i < hull.faces.length; i++) {
+      var norm = hull.faces[i].normal
+      overall_norm.x = overall_norm.x + norm.x
+      overall_norm.y = overall_norm.y + norm.y
+      overall_norm.z = overall_norm.z + norm.z
     }
+    console.log('overall_norm', overall_norm)
+    if (overall_norm.x == 0 && overall_norm.y == 0 && overall_norm.z == 0) {
+      return 1
+    }
+    return 0
   }
   if (latticeID == 3) {
-    if (SelectAtomList.length != 9) return 0
-    else {
-      if (Math.abs(distancesum(SelectAtomList) - 342.61) < 1) return 1
-      else return 0
+    var overall_norm = { x: 0, y: 0, z: 0 }
+    var hull = constructHull(SelectAtomList)
+    var counts = pairwiseDistances(hull.vertices)
+    for (let i = 0; i < hull.faces.length; i++) {
+      var norm = hull.faces[i].normal
+      overall_norm.x = overall_norm.x + norm.x
+      overall_norm.y = overall_norm.y + norm.y
+      overall_norm.z = overall_norm.z + norm.z
     }
+    console.log('overall_norm', overall_norm)
+    if (overall_norm.x == 0 && overall_norm.y == 0 && overall_norm.z == 0) {
+      return 1
+    }
+    return 0
   }
   if (latticeID == 4) {
+    var hull = constructHull(SelectAtomList)
+
     if (SelectAtomList.length != 17) return 0
     else {
       if (Math.abs(distancesum(SelectAtomList) - 889.19) < 1) return 1

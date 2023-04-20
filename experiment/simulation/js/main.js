@@ -180,7 +180,11 @@ currentLatticeElement.addEventListener('click', function () {
 const CheckLattice = document.getElementById('CheckLattice')
 CheckLattice.addEventListener('click', function () {
   //   console.log('Check Lattice Clicked')
-  let out = latticeChecker(LatticeList.indexOf(currentLattice), SelectAtomList)
+  let out = latticeChecker(
+    LatticeList.indexOf(currentLattice),
+    SelectAtomList,
+    atomList,
+  )
   let lbl = document.getElementById('lattice-result')
 
   if (out) lbl.innerHTML = "<span style='color: green;'>Correct</span>"
