@@ -185,12 +185,23 @@ CheckLattice.addEventListener('click', function () {
     SelectAtomList,
     atomList,
   )
+  console.log('results', out)
+
   let lbl = document.getElementById('lattice-result')
 
-  if (out) lbl.innerHTML = "<span style='color: green;'>Correct</span>"
+  if (out[0]) lbl.innerHTML = "<span style='color: green;'>Correct </span>"
   else
     lbl.innerHTML =
-      "<span style='color: red;'>InCorrect Combination of Atoms selected</span>"
+      "<span style='color: red;'>InCorrect list of selected atoms </span>"
+
+  if (out[1])
+    lbl.innerHTML =
+      lbl.innerHTML +
+      "<span style='color: green;'>The Chosen unit cell is Primitive</span>"
+  else
+    lbl.innerHTML =
+      lbl.innerHTML +
+      "<span style='color: red;'> The total atom volume enclosed should be 1</span>"
 })
 
 // select region enclosed between the atoms

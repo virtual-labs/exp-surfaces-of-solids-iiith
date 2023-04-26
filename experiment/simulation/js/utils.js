@@ -478,28 +478,69 @@ export function pairwiseDistances(array) {
   return Object.values(all_dists)
 }
 
+export function HullCount(hull, atomList) {
+  var count = 0
+  for (let i = 0; i < atomList.length; i++) {
+    if (hull.containsPoint(atomList[i].position)) {
+      count = count + 1
+    }
+  }
+  console.log('count', count)
+  return count
+}
+
+export function planeprimitive(SelectAtomList, atomList) {
+  var min = 1000
+  for (let i = 0; i < atomList.length; i++) {
+    var dist = atomList[0].position.distanceTo(atomList[i].position)
+    if (min > dist) {
+      min = dist
+    }
+  }
+  for (let i = 0; i < SelectAtomList.length; i++) {
+    for (let j = i; j < SelectAtomList.length; j++) {
+      var dist = SelectAtomList[i].position.distanceTo(
+        SelectAtomList[j].position,
+      )
+      if (dist == min && SelectAtomList.length == 4) {
+        return 1
+      }
+    }
+  }
+  return 0
+}
 export function latticeChecker(latticeID, SelectAtomList, atomList) {
   if (latticeID == 0) {
     var hull = constructHull(SelectAtomList)
+    var numatoms = HullCount(hull, atomList)
+    var isPrimitive = planeprimitive(SelectAtomList, atomList)
+
     var counts = pairwiseDistances(hull.vertices)
     console.log('counts', counts)
     var square_counts = [4, 2]
     var parallelogram_counts = [1, 2, 3]
+    var numatoms = HullCount(hull, atomList)
+
     if (
       JSON.stringify(counts.sort()) === JSON.stringify(square_counts.sort())
     ) {
-      return 1
+      return [1, isPrimitive]
     } else if (
       JSON.stringify(counts.sort()) ===
       JSON.stringify(parallelogram_counts.sort())
     ) {
-      return 1
+      return [1, isPrimitive]
     }
-    return 0
+    return [0, isPrimitive]
   }
   if (latticeID == 1) {
     var overall_norm = { x: 0, y: 0, z: 0 }
     var hull = constructHull(SelectAtomList)
+    var numatoms = HullCount(hull, atomList)
+    var isPrimitive = 0
+    if (numatoms == 8) {
+      isPrimitive = 1
+    }
     var counts = pairwiseDistances(hull.vertices)
     for (let i = 0; i < hull.faces.length; i++) {
       var norm = hull.faces[i].normal
@@ -509,13 +550,18 @@ export function latticeChecker(latticeID, SelectAtomList, atomList) {
     }
     console.log('overall_norm', overall_norm)
     if (overall_norm.x == 0 && overall_norm.y == 0 && overall_norm.z == 0) {
-      return 1
+      return [1, isPrimitive]
     }
-    return 0
+    return [0, isPrimitive]
   }
   if (latticeID == 2) {
     var overall_norm = { x: 0, y: 0, z: 0 }
     var hull = constructHull(SelectAtomList)
+    var numatoms = HullCount(hull, atomList)
+    var isPrimitive = 0
+    if (numatoms == 8) {
+      isPrimitive = 1
+    }
     var counts = pairwiseDistances(hull.vertices)
     for (let i = 0; i < hull.faces.length; i++) {
       var norm = hull.faces[i].normal
@@ -525,13 +571,18 @@ export function latticeChecker(latticeID, SelectAtomList, atomList) {
     }
     console.log('overall_norm', overall_norm)
     if (overall_norm.x == 0 && overall_norm.y == 0 && overall_norm.z == 0) {
-      return 1
+      return [1, isPrimitive]
     }
-    return 0
+    return [0, isPrimitive]
   }
   if (latticeID == 3) {
     var overall_norm = { x: 0, y: 0, z: 0 }
     var hull = constructHull(SelectAtomList)
+    var numatoms = HullCount(hull, atomList)
+    var isPrimitive = 0
+    if (numatoms == 8) {
+      isPrimitive = 1
+    }
     var counts = pairwiseDistances(hull.vertices)
     for (let i = 0; i < hull.faces.length; i++) {
       var norm = hull.faces[i].normal
@@ -541,17 +592,29 @@ export function latticeChecker(latticeID, SelectAtomList, atomList) {
     }
     console.log('overall_norm', overall_norm)
     if (overall_norm.x == 0 && overall_norm.y == 0 && overall_norm.z == 0) {
-      return 1
+      return [1, isPrimitive]
     }
-    return 0
+    return [0, isPrimitive]
   }
   if (latticeID == 4) {
+    var overall_norm = { x: 0, y: 0, z: 0 }
     var hull = constructHull(SelectAtomList)
-
-    if (SelectAtomList.length != 17) return 0
-    else {
-      if (Math.abs(distancesum(SelectAtomList) - 889.19) < 1) return 1
-      else return 0
+    var numatoms = HullCount(hull, atomList)
+    var isPrimitive = 0
+    if (numatoms == 12) {
+      isPrimitive = 1
     }
+    var counts = pairwiseDistances(hull.vertices)
+    for (let i = 0; i < hull.faces.length; i++) {
+      var norm = hull.faces[i].normal
+      overall_norm.x = overall_norm.x + norm.x
+      overall_norm.y = overall_norm.y + norm.y
+      overall_norm.z = overall_norm.z + norm.z
+    }
+    console.log('overall_norm', overall_norm)
+    if (overall_norm.x == 0 && overall_norm.y == 0 && overall_norm.z == 0) {
+      return [1, isPrimitive]
+    }
+    return [0, isPrimitive]
   }
 }
