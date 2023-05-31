@@ -178,7 +178,7 @@ currentLatticeElement.addEventListener('click', function () {
     SelectAtomList = []
     HullList = []
     curr_latticeID = LatticeList.indexOf(currentLattice)
-    document.getElementById('output').innerHTML = ""
+    document.getElementById('lattice-result').innerHTML = ""
   }
 })
 
