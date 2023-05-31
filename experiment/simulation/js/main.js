@@ -134,6 +134,7 @@ var BoundaryAtomList = []
 var CurrentHull
 var CurrentHullMesh
 var HullList = []
+var curr_latticeID
 
 const LatticeList = [
   'Square Planar',
@@ -147,6 +148,7 @@ var currentLatticeElement = document.getElementById('LatticeList')
 var currentLattice =
   currentLatticeElement.options[currentLatticeElement.selectedIndex].text
 let currentAtomList = createLattice(LatticeList.indexOf(currentLattice))
+var curr_latticeID = LatticeList.indexOf(currentLattice)
 for (let i = 0; i < currentAtomList.length; i++) {
   scene.add(currentAtomList[i])
   atomList.push(currentAtomList[i])
@@ -156,24 +158,28 @@ currentLatticeElement.addEventListener('click', function () {
   currentLattice =
     currentLatticeElement.options[currentLatticeElement.selectedIndex].text
   // console.log('lattice change to', currentLattice)
-  for (let i = 0; i < currentAtomList.length; i++) {
+  if(curr_latticeID != LatticeList.indexOf(currentLattice)) {
+    for (let i = 0; i < currentAtomList.length; i++) {
     scene.remove(currentAtomList[i])
-  }
-  for (let i = 0; i < atomList.length; i++) {
-    scene.remove(atomList[i])
-  }
-  for (let i = 0; i < HullList.length; i++) {
-    scene.remove(HullList[i])
-  }
-  atomList = []
-  currentAtomList = createLattice(LatticeList.indexOf(currentLattice))
+    }
+    for (let i = 0; i < atomList.length; i++) {
+      scene.remove(atomList[i])
+    }
+    for (let i = 0; i < HullList.length; i++) {
+      scene.remove(HullList[i])
+    }
+    atomList = []
+    currentAtomList = createLattice(LatticeList.indexOf(currentLattice))
 
-  for (let i = 0; i < currentAtomList.length; i++) {
-    scene.add(currentAtomList[i])
-    atomList.push(currentAtomList[i])
+    for (let i = 0; i < currentAtomList.length; i++) {
+      scene.add(currentAtomList[i])
+      atomList.push(currentAtomList[i])
+    }
+    SelectAtomList = []
+    HullList = []
+    curr_latticeID = LatticeList.indexOf(currentLattice)
+    document.getElementById('output').innerHTML = ""
   }
-  SelectAtomList = []
-  HullList = []
 })
 
 // respond to check selected lattice
@@ -189,15 +195,15 @@ CheckLattice.addEventListener('click', function () {
 
   let lbl = document.getElementById('lattice-result')
 
-  if (out[0]) lbl.innerHTML = "<span style='color: green;'>Correct </span>"
+  if (out[0]) lbl.innerHTML = "<span style='color: green;'>Correct choice of atoms!</span>"
   else
     lbl.innerHTML =
-      "<span style='color: red;'>InCorrect list of selected atoms </span>"
+      "<span style='color: red;'>Incorrect choice of atoms!</span>"
 
   if (out[1])
     lbl.innerHTML =
       lbl.innerHTML +
-      "<span style='color: green;'>The Chosen unit cell is Primitive</span>"
+      "<span style='color: green;'> The chosen unit cell is primitive</span>"
   else
     lbl.innerHTML =
       lbl.innerHTML +
@@ -211,7 +217,7 @@ selectRegion.addEventListener('click', function () {
   if (SelectAtomList.length < 4 || currentLattice == 'Square Planar') {
     let lbl = document.getElementById('lattice-result')
     lbl.innerHTML =
-      "<span style='color: red;'>Select Region Button expects atleast 4 non planar points to be selected</span>"
+      "<span style='color: red;'>Select Region button expects atleast 4 non-planar points to be selected!</span>"
 
     return
   }
