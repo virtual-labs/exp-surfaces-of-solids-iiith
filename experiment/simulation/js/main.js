@@ -144,15 +144,42 @@ const LatticeList = [
   'Hexagonal Packing',
 ]
 
+<<<<<<< HEAD
 var currentLatticeElement = document.getElementById('LatticeList')
 var currentLattice =
   currentLatticeElement.options[currentLatticeElement.selectedIndex].text
 let currentAtomList = createLattice(LatticeList.indexOf(currentLattice))
 var curr_latticeID = LatticeList.indexOf(currentLattice)
+=======
+// respond to select a bunch of atoms
+const addSelectList = document.getElementById('SelectAtom')
+addSelectList.addEventListener('click', function () {
+  //   console.log('Selecting atom mode')
+  if (action != 'selectAtom') {
+    action = 'selectAtom'
+  } else {
+    action = ''
+    SelectAtomList = []
+  }
+})
+const LatticeList = [
+  'Square Planar',
+  'Simple Cubic',
+  'Face Centered Cubic',
+  'Body Centered Cubic',
+  'Hexagonal Packing',
+]
+var currentLatticeElement = document.getElementById('LatticeList')
+var currentLattice =
+  currentLatticeElement.options[currentLatticeElement.selectedIndex].text
+
+let currentAtomList = createLattice(LatticeList.indexOf(currentLattice))
+>>>>>>> origin/dev
 for (let i = 0; i < currentAtomList.length; i++) {
   scene.add(currentAtomList[i])
   atomList.push(currentAtomList[i])
 }
+<<<<<<< HEAD
 
 currentLatticeElement.addEventListener('click', function () {
   currentLattice =
@@ -179,13 +206,75 @@ currentLatticeElement.addEventListener('click', function () {
     HullList = []
     curr_latticeID = LatticeList.indexOf(currentLattice)
     document.getElementById('lattice-result').innerHTML = ''
+=======
+currentLatticeElement.addEventListener('click', function () {
+  currentLattice =
+    currentLatticeElement.options[currentLatticeElement.selectedIndex].text
+  // console.log('lattice change to', currentLattice)
+  for (let i = 0; i < currentAtomList.length; i++) {
+    scene.remove(currentAtomList[i])
+  }
+  for (let i = 0; i < HullMeshList.length; i++) {
+    scene.remove(HullMeshList[i])
+  }
+  atomList = []
+  currentAtomList = createLattice(LatticeList.indexOf(currentLattice))
+
+  for (let i = 0; i < currentAtomList.length; i++) {
+    // console.log(currentAtomList[i])
+    scene.add(currentAtomList[i])
+    atomList.push(currentAtomList[i])
+>>>>>>> origin/dev
   }
 })
+// respond to prev/next lattice buttons
+// const PrevButton = document.getElementById('prev-btn')
+// PrevButton.addEventListener('click', function () {
+//   //   console.log('Prev Button clicked')
+//   latticeID = changeCurrentLatticePrev()
+//   for (let i = 0; i < currentAtomList.length; i++) {
+//     scene.remove(currentAtomList[i])
+//   }
+//   atomList = []
+//   SelectAtomList = []
+//   action = ''
+//   currentAtomList = createLattice(latticeID)
+
+//   for (let i = 0; i < currentAtomList.length; i++) {
+//     // console.log(currentAtomList[i])
+//     scene.add(currentAtomList[i])
+//     atomList.push(currentAtomList[i])
+//   }
+//   for (let i = 0; i < HullMeshList.length; i++) {
+//     scene.remove(HullMeshList[i])
+//   }
+// })
+// const NextButton = document.getElementById('next-btn')
+// NextButton.addEventListener('click', function () {
+//   //   console.log('Next Button clicked')
+//   latticeID = changeCurrentLatticeNext()
+//   for (let i = 0; i < currentAtomList.length; i++) {
+//     scene.remove(currentAtomList[i])
+//   }
+//   currentAtomList = createLattice(latticeID)
+//   atomList = []
+//   SelectAtomList = []
+//   action = ''
+//   for (let i = 0; i < currentAtomList.length; i++) {
+//     // console.log(currentAtomList[i])
+//     scene.add(currentAtomList[i])
+//     atomList.push(currentAtomList[i])
+//   }
+//   for (let i = 0; i < HullMeshList.length; i++) {
+//     scene.remove(HullMeshList[i])
+//   }
+// })
 
 // respond to check selected lattice
 const CheckLattice = document.getElementById('CheckLattice')
 CheckLattice.addEventListener('click', function () {
   //   console.log('Check Lattice Clicked')
+<<<<<<< HEAD
   let out = latticeChecker(
     LatticeList.indexOf(currentLattice),
     SelectAtomList,
@@ -193,6 +282,9 @@ CheckLattice.addEventListener('click', function () {
   )
   console.log('results', out)
 
+=======
+  let out = latticeChecker(LatticeList.indexOf(currentLattice), SelectAtomList)
+>>>>>>> origin/dev
   let lbl = document.getElementById('lattice-result')
 
   if (out[0])
