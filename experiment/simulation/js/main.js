@@ -158,9 +158,9 @@ currentLatticeElement.addEventListener('click', function () {
   currentLattice =
     currentLatticeElement.options[currentLatticeElement.selectedIndex].text
   // console.log('lattice change to', currentLattice)
-  if(curr_latticeID != LatticeList.indexOf(currentLattice)) {
+  if (curr_latticeID != LatticeList.indexOf(currentLattice)) {
     for (let i = 0; i < currentAtomList.length; i++) {
-    scene.remove(currentAtomList[i])
+      scene.remove(currentAtomList[i])
     }
     for (let i = 0; i < atomList.length; i++) {
       scene.remove(atomList[i])
@@ -178,7 +178,7 @@ currentLatticeElement.addEventListener('click', function () {
     SelectAtomList = []
     HullList = []
     curr_latticeID = LatticeList.indexOf(currentLattice)
-    document.getElementById('lattice-result').innerHTML = ""
+    document.getElementById('lattice-result').innerHTML = ''
   }
 })
 
@@ -195,19 +195,21 @@ CheckLattice.addEventListener('click', function () {
 
   let lbl = document.getElementById('lattice-result')
 
-  if (out[0]) lbl.innerHTML = "<span style='color: green;'>Correct choice of atoms!</span>"
+  if (out[0])
+    lbl.innerHTML =
+      "<span style='color: green;'>Correct choice of atoms!</span>"
   else
     lbl.innerHTML =
       "<span style='color: red;'>Incorrect choice of atoms!</span>"
 
-  if (out[1])
-    lbl.innerHTML =
-      lbl.innerHTML +
-      "<span style='color: green;'> The chosen unit cell is primitive</span>"
-  else
-    lbl.innerHTML =
-      lbl.innerHTML +
-      "<span style='color: red;'> The total atom volume enclosed should be 1</span>"
+  //   if (out[1])
+  //     lbl.innerHTML =
+  //       lbl.innerHTML +
+  //       "<span style='color: green;'> The chosen unit cell is primitive</span>"
+  //   else
+  //     lbl.innerHTML =
+  //       lbl.innerHTML +
+  //       "<span style='color: red;'> The total atom volume enclosed should be 1</span>"
 })
 
 // select region enclosed between the atoms

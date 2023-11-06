@@ -410,7 +410,7 @@ export function createLattice(latticeID) {
     }
   } else if (latticeID == 4) {
     console.log('adding HCP')
-    let latticedims = [20, 20, 20]
+    let latticedims = [10, 10, 10]
     let height = 0
     for (let z = 0; z < latticedims[2]; z += 1.732) {
       if (height % 2 == 0) {
