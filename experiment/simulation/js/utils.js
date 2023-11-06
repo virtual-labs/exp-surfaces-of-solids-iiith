@@ -328,15 +328,9 @@ export function createLattice(latticeID) {
   let atomlist = []
   if (latticeID == 0) {
     console.log('square')
-<<<<<<< HEAD
     let latticedims = [5, 5, 5]
     for (let x = -5; x < latticedims[0]; x += 2) {
       for (let y = -5; y < latticedims[1]; y += 2) {
-=======
-    let latticedims = [20, 20, 20]
-    for (let x = 0; x < latticedims[0]; x += 2) {
-      for (let y = 0; y < latticedims[1]; y += 2) {
->>>>>>> origin/dev
         let pos = new THREE.Vector3(x, 0, y)
         let atom = addSphereAtCoordinate(pos, 'Y')
         atomlist.push(atom)

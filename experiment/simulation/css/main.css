@@ -16,11 +16,8 @@ aside {
 .v-datalist-container {
   height: 100%;
   padding: 0;
-<<<<<<< HEAD
   overflow-y: scroll;
   overflow-x: hidden;
-=======
->>>>>>> origin/dev
 }
 
 .v-instruction-container {
@@ -31,16 +28,10 @@ aside {
 .v-canvas-container {
   width: 100%;
   height: 100%;
-<<<<<<< HEAD
   min-height: 800px;
   padding: 0px;
   border-color: #48c774;
   border-radius: 1%;
-=======
-  min-height: 900px;
-  border: none;
-  padding: 0px;
->>>>>>> origin/dev
   /* position: fixed; */
   position: static;
 }
@@ -177,7 +168,6 @@ aside {
 .coord-dim {
   width: 100px;
   margin: 0.25rem;
-<<<<<<< HEAD
 }
 
 .switch {
@@ -286,20 +276,6 @@ input:checked + .slider:before {
   border-radius: 0.5rem;
   font-weight: bold;
 }
-=======
-}
-#LatticeList {
-  background-color: white;
-  padding: 5px;
-  font-size: 20px;
-  border: none;
-  cursor: pointer;
-  justify-content: center;
-  text-align: center;
-  border-radius: 0.5rem;
-  font-weight: bold;
-}
->>>>>>> origin/dev
 #add-shape-btn {
   background-color: #3298dc;
   border-radius: 0.5rem;
@@ -346,7 +322,6 @@ input:checked + .slider:before {
   color: black;
   font-size: 16px;
   font-weight: bold;
-<<<<<<< HEAD
 }
 #ClearSelection {
   background-color: #3298dc;
@@ -354,8 +329,6 @@ input:checked + .slider:before {
   color: black;
   font-size: 16px;
   font-weight: bold;
-=======
->>>>>>> origin/dev
 }
 #SelectAll {
   background-color: #48c774;
