@@ -271,14 +271,13 @@ selectRegion.addEventListener('click', function () {
 
   let vals = select_Region(SelectAtomList, atomList)
   let hullmesh = vals.mesh
-  CurrentHullMesh = vals.mesh
-  let arr = vals.selectarray
-  CurrentHull = vals.convexHull
-  for (let i = 0; i < arr.length; i++) {
-    if (!SelectAtomList.includes(arr[i])) {
-      SelectAtomList.push(arr[i])
-    }
-  }
+  //   let arr = vals.selectarray
+  //   for (let i = 0; i < arr.length; i++) {
+  //     if (!SelectAtomList.includes(arr[i])) {
+  //       SelectAtomList.push(arr[i])
+  //     }
+  //   }
+  //   console.log(hullmesh, vals)
   HullList.push(hullmesh)
   scene.add(hullmesh)
 })
