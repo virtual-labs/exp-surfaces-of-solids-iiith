@@ -1,0 +1,89 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is an unit cell?",
+      "answers": {
+        "a": "A regular arrangement of atoms in a crystal",
+        "b": "A cell of atoms in a lattice",
+        "c": "The smallest possible element of a lattice that is repeated in all directions",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "c": "This is the correct definition of an unit cell"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of these are true about an unit cell?",
+      "answers": {
+        "a": "A repetitive arrangement of them can build the whole crystal",
+        "b": "An unit cell cannot be divided into smaller pieces that serve as unit cells themselves",
+        "c": "Both (a) and (b)",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "c": "These facts come from the definition of an unit cell"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+        {
+      "question": "How many atoms are shared by a cubic primitive unit cell with its neighbours?",
+      "answers": {
+        "a": "0",
+        "b": "1/8",
+        "c": "8",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "c": "A cubic primitive unit cell shares 8 atoms with its neighbours"
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+        {
+      "question": "What is the contribution of an atom on the vertice of an unit cell to the unit cell?",
+      "answers": {
+        "a": "0",
+        "b": "1/8",
+        "c": "1",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "b": "A vertice atom contributes 1/8 to the unit cell."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+        {
+      "question": "What is the contribution of an atom in the middle of a face of an unit cell to the unit cell?",
+      "answers": {
+        "a": "0",
+        "b": "1/8",
+        "c": "1/4",
+        "d": "1/2"
+      },
+      "explanations": {
+        "d": "An atom on the face of a unit cell can only be shared by one more unit cell. Hence its contribution is 1/2"
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    },
+        {
+      "question": "Which of these are primitive unit cells?",
+      "answers": {
+        "a": "Simple cubic unit cell",
+        "b": "Wigner-Seitz unit cell",
+        "c": "Both (a) and (b)",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "c": "Simple cubic unit cell has one atom. So does a Wigner-Seitz unit cell"
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    }
+  ]
+}
