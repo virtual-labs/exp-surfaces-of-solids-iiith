@@ -1,0 +1,89 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which of the following is true about the relationship between lattice points and unit cells?",
+      "answers": {
+        "a": "Each lattice point represents an individual atom or molecule.",
+        "b": "A unit cell can contain multiple lattice points.",
+        "c": "Lattice points are only located at the corners of unit cells.",
+        "d": "The number of lattice points in a unit cell is always equal to one."
+      },
+      "explanations": {
+        "b": "A unit cell can contain multiple lattice points, especially in non-primitive cells where points may be located at corners, faces, or within the cell."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In a body-centered cubic (BCC) lattice, where are the lattice points located?",
+      "answers": {
+        "a": "At the corners only.",
+        "b": "At the corners and the center of each face.",
+        "c": "At the corners and the center of the cell.",
+        "d": "At the center of each edge."
+      },
+      "explanations": {
+        "c": "In a BCC lattice, lattice points are located at each corner and a single point at the center of the unit cell."
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "How does the choice of unit cell affect the calculated density of a crystal?",
+      "answers": {
+        "a": "The choice of unit cell does not affect the calculated density.",
+        "b": "Using a non-primitive unit cell will result in a higher calculated density.",
+        "c": "Using a primitive unit cell will result in a higher calculated density.",
+        "d": "The calculated density is only accurate when using the smallest possible unit cell."
+      },
+      "explanations": {
+        "a": "The calculated density of a crystal is an intrinsic property and remains the same regardless of the choice of unit cell, as long as the unit cell is representative of the crystal structure."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which of the following statements is true regarding the selection of unit cells in a crystal lattice?",
+      "answers": {
+        "a": "There is only one correct way to choose a unit cell for a given lattice.",
+        "b": "Different choices of unit cells can represent the same lattice structure.",
+        "c": "Non-primitive unit cells are always larger than primitive unit cells.",
+        "d": "Primitive unit cells cannot be used to represent complex crystal structures."
+      },
+      "explanations": {
+        "b": "The same lattice structure can be represented by different choices of unit cells, including both primitive and non-primitive cells."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Why might one choose to use a non-primitive unit cell over a primitive one?",
+      "answers": {
+        "a": "To simplify the visualization of the crystal structure.",
+        "b": "To reduce computational complexity in simulations.",
+        "c": "To ensure accurate density calculations.",
+        "d": "To eliminate redundant lattice points."
+      },
+      "explanations": {
+        "a": "Non-primitive unit cells are often chosen to simplify visualization and make symmetry in the crystal structure more apparent."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Which statement about surface energy in crystals is correct?",
+      "answers": {
+        "a": "Surface energy depends only on the type of material, not the crystallographic orientation.",
+        "b": "Surface energy is higher for surfaces with higher atomic packing density.",
+        "c": "Surfaces with lower atomic packing density have higher surface energy.",
+        "d": "All crystal surfaces have the same surface energy."
+      },
+      "explanations": {
+        "c": "Surfaces with lower atomic packing density tend to have higher surface energy due to more unsatisfied bonds."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    }
+  ]
+}
