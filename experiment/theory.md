@@ -14,11 +14,11 @@ For a given crystal, there are various possible choices of unit cells, as shown 
 ### Primitive and Non-Primitive Unit Cells 
 
 There are two main types of unit cells: **primitive** and **non-primitive**.
-- A primitive unit cell contains exactly one lattice point. This means that the unit cell is the smallest repeating unit that, when translated, can create the entire lattice. Atoms located at the vertices of the unit cell are shared between adjacent unit cells, so each vertex contributes $ 1/8 $  of an atom to the unit cell. In a cubic lattice, with 8 vertices, this gives a total of 1 atom per primitive unit cell.
+- A primitive unit cell contains exactly one lattice point **per unit cell**. This means that the unit cell is the smallest repeating unit that, when translated, can create the entire lattice. Atoms located at the vertices of the unit cell are shared between adjacent unit cells, so each vertex contributes $ 1/8 $  of an atom to the unit cell. In a cubic lattice, with 8 vertices, this gives a total of 1 atom per primitive unit cell.
 - A non-primitive unit cell contains more than one lattice point, often with additional points located on the faces or within the interior of the unit cell.
 
 <p align="center">
-  <img src="./images/prim.jpg" alt="primitve/nonprimitive cell"/>
+  <img src="./images/prim.png" alt="primitve/nonprimitive cell"/>
 </p>
 
 There are seven primitive crystal systems: cubic, tetragonal, orthorhombic, hexagonal, monoclinic, triclinic, and rhombohedral. These systems differ in the arrangement of their crystallographic axes and angles, as shown in the figure below. Based on these crystal systems, **14 Bravais lattices** are defined, which are the standard types of lattices used to describe crystal structures.
