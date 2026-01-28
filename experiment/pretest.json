@@ -2,38 +2,88 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is a unit cell in crystallography?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "The smallest repeating unit that can build up the entire crystal lattice through translation.",
+        "b": "A single atom within a crystal.",
+        "c": "A defect in the crystal structure.",
+        "d": "The outermost layer of a crystal."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "A unit cell is the smallest repeating unit in a crystal lattice that, through translational repetition, can recreate the entire structure."
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Which of the following is a characteristic of a primitive unit cell?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Contains more than one lattice point.",
+        "b": "Contains only one lattice point.",
+        "c": "Has atoms only at the center.",
+        "d": "Is always cubic in shape."
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "b": "A primitive unit cell contains only one lattice point, typically with atoms located at the vertices."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "How many types of Bravais lattices are there in three-dimensional space?",
+      "answers": {
+        "a": "7",
+        "b": "14",
+        "c": "28",
+        "d": "4"
+      },
+      "explanations": {
+        "b": "There are 14 distinct Bravais lattices in three-dimensional space, corresponding to the seven crystal systems."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In a face-centered cubic (FCC) lattice, how many atoms are effectively contained within one unit cell?",
+      "answers": {
+        "a": "1",
+        "b": "2",
+        "c": "4",
+        "d": "8"
+      },
+      "explanations": {
+        "c": "An FCC unit cell has atoms at each corner (1/8 contribution each) and at the center of each face (1/2 contribution each), totaling 4 atoms."
       },
       "correctAnswer": "c",
-      "difficulty": "beginner"
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which of the following crystal systems has all sides equal and all angles equal to 90 degrees?",
+      "answers": {
+        "a": "Tetragonal",
+        "b": "Orthorhombic",
+        "c": "Cubic",
+        "d": "Monoclinic"
+      },
+      "explanations": {
+        "c": "In the cubic crystal system, all sides are equal in length, and all angles are 90 degrees."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "What distinguishes a non-primitive unit cell from a primitive one?",
+      "answers": {
+        "a": "Non-primitive unit cells have additional lattice points within the cell, not just at the vertices.",
+        "b": "Non-primitive unit cells are smaller than primitive unit cells.",
+        "c": "Non-primitive unit cells lack translational symmetry.",
+        "d": "Non-primitive unit cells are always hexagonal."
+      },
+      "explanations": {
+        "a": "Non-primitive unit cells contain additional lattice points, such as at face centers or body centers, beyond those at the vertices."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
     }
   ]
 }
